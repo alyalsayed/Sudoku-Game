@@ -17,9 +17,7 @@ def create_board(level):
 
 
 def random_puzzle(N=17):
-    """Make a random puzzle with N or more assignments. Restart on contradictions.
-    Note the resulting puzzle is not guaranteed to be solvable, but empirically
-    about 99.8% of them are solvable. Some have multiple solutions."""
+    """Make a random puzzle with N or more assignments. """
     # squares  ['A1', 'A2', 'A3' ... A9, B1, B2, B3 ... B9, C1, C2, C3 ... C9, ... I9]
     values = dict((s, digits) for s in squares)
     # {'A1': '123456789', 'A2': '123456789', 'A3': '123456789' ...}
@@ -164,33 +162,7 @@ def display(values):
             print(line)
     print()
 
-
-# not important
-
-
-def solve_all(grids, name='', showif=0.0):
-    """Attempt to solve a sequence of grids. Report results.
-    When showif is a number of seconds, display puzzles that take longer.
-    When showif is None, don't display any puzzles."""
-    def time_solve(grid):
-        start = time.time()
-        values = solve(grid)
-        t = time.time()-start
-        # Display puzzles that take long enough
-        if showif is not None and t > showif:
-            display(grid_values(grid))
-            if values:
-                display(values)
-            print('(%.2f seconds)\n' % t)
-        return (t, is_solved(values))
-    times, results = zip(*[time_solve(grid) for grid in grids])
-    N = len(grids)
-    if N > 1:
-        print("Solved %d of %d %s puzzles (avg %.2f secs (%d Hz), max %.2f secs)." % (
-            sum(results), N, name, sum(times)/N, N/sum(times), max(times)))
-
 # check solution and is_solved do the same thing
-
 
 def check_solution(solution):
     # check rows of solution
