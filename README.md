@@ -5,4 +5,4 @@ As a logic puzzle, Sudoku is also an excellent brain game.<br><br>
 If you play Sudoku daily, you will soon start to see improvements<br> in your concentration and overall brain power.<br><br>
 Start a game now. <br>
 
-https://github.com/alyalsayed/IEEE-Project--SudokuGame/issues/3#issue-1609312169
+https://user-images.githubusercontent.com/84514495/222838742-16ed8d35-06cb-4cb9-9b1d-aeaad51ccf49.jpg
